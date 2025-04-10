@@ -1,0 +1,53 @@
+@use "sass:math";
+
+.keyboard-shortcuts {
+  padding: #{math.div(20, $base-font-size)}rem;
+  margin-right: #{math.div(20, $base-font-size)}rem;
+  padding-bottom: #{math.div(40, $base-font-size)}rem;
+  max-width: 100%;
+  overflow-y: auto;
+}
+
+.keyboard-shortcuts-note {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.keyboard-shortcut-item {
+  display: flex;
+  & + & {
+    margin-top: #{math.div(10, $base-font-size)}rem;
+  }
+  align-items: baseline;
+}
+
+.keyboard-shortcut__command {
+  font-weight: bold;
+  text-align: right;
+  margin-right: #{math.div(10, $base-font-size)}rem;
+  padding: #{math.div(3, $base-font-size)}rem;
+  min-inline-size: max-content;
+  @include themify {
+    border: 1px solid getThemifyVariable("button-border-color");
+    border-radius: 3px;
+  }
+}
+
+.keyboard-shortcuts__title {
+  padding-bottom: #{math.div(10, $base-font-size)}rem;
+}
+
+.keyboard-shortcuts__description {
+  padding-bottom: #{math.div(10, $base-font-size)}rem;
+}
+
+.keyboard-shortcuts__list:not(:last-of-type) {
+  padding-bottom: #{math.div(10, $base-font-size)}rem;
+}
+
+.keyboard-shortcuts__title:not(:first-of-type) {
+  @include themify() {
+    border-top: 1px dashed getThemifyVariable("button-border-color");
+    padding-top: #{math.div(10, $base-font-size)}rem;
+  }
+}

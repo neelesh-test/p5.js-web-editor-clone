@@ -1,0 +1,55 @@
+@use "sass:math";
+
+.console__input {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  @include themify() {
+    background-color: getThemifyVariable('console-input-background-color');
+  }
+}
+
+.console__input .console-active__arrow {
+  width: auto;
+  height: 38%;
+  @include themify() {
+		& g,
+		& polygon,
+		& path {
+			fill: getThemifyVariable('secondary-text-color');
+		}
+	}
+}
+
+.console-active__arrow-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: #{math.div(10, $base-font-size)}rem;
+}
+
+.console__editor {
+  margin-left: #{math.div(15, $base-font-size)}rem;
+  flex: 1;
+  & .CodeMirror {
+    height: auto;
+  }
+  & .CodeMirror-lines {
+    padding-top: #{math.div(2, $base-font-size)}rem;
+  }
+}
+
+.console__editor .CodeMirror {
+  border: none;
+  font-family: Inconsolata,monospace;
+  @include themify() {
+    background-color: getThemifyVariable('console-input-background-color');
+  }
+
+  .CodeMirror-line {
+    @include themify() {
+      color: getThemifyVariable('console-color');
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use "sass:math";
+
+.timer__saved-time {
+  @include themify() {
+    color: getThemifyVariable('inactive-text-color');
+  }
+  font-size: #{math.div(12, $base-font-size)}rem;
+  padding-right: #{math.div(30, $base-font-size)}rem;
+  &.timer__saved-time--notOwner {
+    display: none;
+  }
+}

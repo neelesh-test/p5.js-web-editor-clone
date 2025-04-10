@@ -1,0 +1,35 @@
+@use "sass:math";
+
+.preview-frame-holder {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.preview-frame-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  display: none;
+}
+
+.preview-frame__header {
+  height: #{math.div(29, $base-font-size)}rem;
+}
+
+.preview-frame__title {
+  @include themify() {
+    color: getThemifyVariable('secondary-text-color');
+  }
+  height: #{math.div(29, $base-font-size)}rem;
+  padding-top: #{math.div(7, $base-font-size)}rem;
+  padding-left: #{math.div(5, $base-font-size)}rem;
+  font-size: #{math.div(12, $base-font-size)}rem;
+  font-weight: normal;
+}
+
+.preview-frame__content {
+  position: relative;
+  flex: 1 1 0;
+}

@@ -1,0 +1,88 @@
+@use "sass:math";
+
+.api-key-form__summary {
+  padding-top: #{math.div(25, $base-font-size)}rem;
+}
+
+.api-key-form__section {
+  padding-bottom: #{math.div(15, $base-font-size)}rem;
+}
+
+.api-key-form__title {
+  padding: #{math.div(15, $base-font-size)}rem 0;
+  font-size: #{math.div(21, $base-font-size)}rem;
+  font-weight: bold;
+}
+
+.api-key-list {
+  display: block;
+  max-width: 900px;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  thead tr th {
+    width: 30%;
+  }
+
+  thead tr th:last-child {
+    width: 10%;
+  }
+
+  th {
+    padding: #{math.div(5, $base-font-size)}rem;
+  }
+
+  td {
+    padding: #{math.div(15, $base-font-size)}rem #{math.div(5, $base-font-size)}rem;
+  }
+
+  tbody tr:nth-child(odd) {
+    @include themify() {
+      background: getThemifyVariable('table-row-stripe-color');
+    }
+  }
+}
+
+.api-key-list__action {
+  text-align: center;
+}
+
+.api-key-list__delete-button {
+    width:#{math.div(20, $base-font-size)}rem;
+    height:#{math.div(20, $base-font-size)}rem;
+
+    text-align: center;
+
+    @include themify() {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      position: initial;
+      left: 0;
+      top: 0;
+        & g, & path {
+          opacity: 1;
+          fill: getThemifyVariable('icon-color');
+        }
+    }
+}
+
+.api-key-list__delete-button:hover {
+  @include themify() {
+      & g, & path {
+        opacity: 1;
+        fill: getThemifyVariable('icon-hover-color');
+      }
+  }
+}
+
+.api-key-form__new-token__title {
+  margin-bottom: #{math.div(10, $base-font-size)}rem;
+  font-size: #{math.div(18, $base-font-size)}rem;
+  font-weight: bold;
+}
+
+.api-key-form__new-token__info {
+  padding: #{math.div(10, $base-font-size)}rem 0;
+}

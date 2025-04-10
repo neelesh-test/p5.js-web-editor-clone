@@ -1,0 +1,72 @@
+@use "sass:math";
+
+.searchbar {
+  position: relative;
+  display: flex;
+}
+
+.searchbar__input {
+  width: #{math.div(240, $base-font-size)}rem;
+  height: #{math.div(36, $base-font-size)}rem;
+  border: solid 0.5px;
+  padding-left: #{math.div(36, $base-font-size)}rem;
+  padding-right: #{math.div(38, $base-font-size)}rem;
+  @include themify() {
+    border-color: getThemifyVariable('input-border-color');
+    background-color: getThemifyVariable('input-background-color');
+  }
+}
+
+div.searchbar__button {
+  background-color: unset;
+  width: #{math.div(31, $base-font-size)}rem;
+  height: #{math.div(36, $base-font-size)}rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  border-right: solid 1px;
+  @include themify() {
+    border-right-color: getThemifyVariable('input-border-color');
+  }
+}
+
+.searchbar__icon {
+  display: inline-block;
+  & svg {
+    width: #{math.div(22, $base-font-size)}rem;
+    height: #{math.div(27, $base-font-size)}rem;
+    transform: scaleX(-1);
+    padding-top: #{math.div(3, $base-font-size)}rem;
+  }
+  & path {
+    @include themify() {
+      fill: getThemifyVariable('input-text-color');
+    }
+  }
+}
+
+.searchbar__clear-button {
+  font-weight: bold;
+  font-size: #{math.div(10, $base-font-size)}rem;
+  text-align: center;
+  border-radius: 2px;
+  align-self: center;
+  position: absolute;
+  padding: #{math.div(3, $base-font-size)}rem #{math.div(4, $base-font-size)}rem;
+  right: #{math.div(7, $base-font-size)}rem;
+  @include themify() {
+    color: getThemifyVariable('primary-text-color');
+    background-color: getThemifyVariable('search-clear-background-color');
+    &:hover, &:focus {
+      color: getThemifyVariable('search-hover-text-color');
+      background-color: getThemifyVariable('search-hover-background-color');
+    }
+  }
+}
+
+.searchbar--is-empty .searchbar__clear-button {
+  display: none;
+}

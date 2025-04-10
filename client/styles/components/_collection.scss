@@ -1,0 +1,185 @@
+@use "sass:math";
+
+.collection-container {
+  padding: #{math.div(24, $base-font-size)}rem #{math.div(66, $base-font-size)}rem;
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction:column;
+
+  @media (max-width:770px) {
+    padding: 0;
+  }
+}
+
+.collection {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-metadata {
+  max-width: #{math.div(1012, $base-font-size)}rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: #{math.div(24, $base-font-size)}rem;
+}
+
+.collection-metadata__columns {
+  display: flex;
+  @media (max-width:770px) {
+    flex-direction: column;
+  }
+}
+
+.collection-metadata__column--left,
+.collection-metadata__column--right {
+  flex: 1;
+}
+
+.collection-metadata__column--right {
+  align-self: flex-end;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.collection-metadata__column--right > * {
+  margin-left: #{math.div(10, $base-font-size)}rem;
+}
+
+.collection-metadata__name {
+  // padding: #{8 / $base-font-size}rem 0;
+}
+
+.collection-metadata__name .editable-input__label {
+  padding: 0.83333rem #{math.div(7, $base-font-size)}rem;
+}
+
+.collection-metadata__name,
+.collection-metadata__name .editable-input__input {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.collection-metadata__user {
+  padding-top: #{math.div(8, $base-font-size)}rem;
+  font-size: 14px;
+}
+
+.collection-metadata--is-owner .collection-metadata__user {
+  padding-left: #{math.div(8, $base-font-size)}rem;
+}
+
+.collection-metadata__description {
+  padding-top: #{math.div(8, $base-font-size)}rem;
+  text-align: left;
+  font-size: #{math.div(14, $base-font-size)}rem;
+}
+
+.collection-metadata__description .editable-input__label {
+  text-align: left;
+}
+
+.collection-metadata__description .editable-input--has-value:not(:hover) .editable-input__label  {
+  @include themify() {
+    color: getThemifyVariable('primary-text-color');
+  }
+}
+
+.collection-metadata__description .editable-input__input {
+  width: 100%;
+}
+
+.collection-share {
+  text-align: right;
+  position: relative;
+}
+
+.collection-share .copyable-input {
+  padding-bottom: 0;
+}
+
+.collection__share-dropdown {
+  @extend %dropdown-open-right;
+  padding: #{math.div(20, $base-font-size)}rem;
+  width: #{math.div(350, $base-font-size)}rem;
+  @media only screen and (max-width: 520px) {
+    max-width: 90vw;
+    right: -#{math.div(120, $base-font-size)}rem;
+  }
+}
+
+.collection-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  max-width: #{math.div(1012, $base-font-size)}rem;
+  margin: 0 auto;
+  width: 100%;
+
+  @include themify() {
+    border: 1px solid getThemifyVariable('modal-border-color');
+  }
+}
+
+.collection-table-wrapper {
+  overflow-y: auto;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+
+// maybe don't need this?
+[data-has-items=false] .collection-table-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collection-empty-message {
+  text-align: center;
+  font-size: #{math.div(16, $base-font-size)}rem;
+}
+
+.collection-row__action-column {
+  width: #{math.div(60, $base-font-size)}rem;
+  position: relative;
+}
+
+.collection-row__remove-button {
+  display: inline-block;
+  width:#{math.div(35, $base-font-size)}rem;
+  height:#{math.div(35, $base-font-size)}rem;
+  @include icon();
+  @include themify() {
+    // icon graphic
+    path {
+      fill: getThemifyVariable('table-button-color');
+    }
+
+    // icon background circle
+    path:first-child {
+      fill: getThemifyVariable('table-button-background-color');
+    }
+
+    & svg {
+      width:#{math.div(35, $base-font-size)}rem;
+      height:#{math.div(35, $base-font-size)}rem;
+    }
+
+    &:hover,
+    &:focus {
+      path {
+        fill: getThemifyVariable('table-button-hover-color');
+      }
+
+      path:first-child {
+        fill: getThemifyVariable('table-button-background-hover-color');
+      }
+    }
+  }
+}
