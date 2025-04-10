@@ -204,4 +204,6 @@ app.listen(process.env.PORT, (error) => {
   }
 });
 
+console.log('abc');
+
 export default app;
