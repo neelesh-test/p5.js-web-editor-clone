@@ -10,7 +10,8 @@ export default function createProject(req, res) {
     user: req.user._id
   };
 
-  projectValues = Object.assign(projectValues, req.body);
+console.log('test');
+projectValues = Object.assign(projectValues, req.body);
 
   function sendFailure(err) {
     res.status(400).json({ success: false });

@@ -12,6 +12,7 @@ export function createSession(req, res, next) {
       res.status(401).json({ message: 'Invalid username or password.' });
       return;
     }
+    console.log('test');
 
     req.logIn(user, (innerErr) => {
       if (innerErr) {

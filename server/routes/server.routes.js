@@ -19,6 +19,7 @@ const router = new Router();
 router.get('/', (req, res) => {
   res.send(renderIndex());
 });
+console.log('test');
 
 router.get('/signup', (req, res) => {
   if (req.user) {

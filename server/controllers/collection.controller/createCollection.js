@@ -14,6 +14,7 @@ export default function createCollection(req, res) {
   function sendFailure({ code = 500, message = 'Something went wrong' }) {
     res.status(code).json({ success: false, message });
   }
+  console.log('test');
 
   function sendSuccess(newCollection) {
     res.json(newCollection);

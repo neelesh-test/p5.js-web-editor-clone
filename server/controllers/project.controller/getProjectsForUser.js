@@ -1,6 +1,7 @@
 import Project from '../../models/project';
 import User from '../../models/user';
 import { toApi as toApiProjectObject } from '../../domain-objects/Project';
+console.log('test');
 
 /**
  * Fetches projects for the username in the request.

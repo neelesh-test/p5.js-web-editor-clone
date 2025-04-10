@@ -17,6 +17,7 @@ function generateApiKey() {
     });
   });
 }
+console.log('test');
 
 export function createApiKey(req, res) {
   return new Promise((resolve, reject) => {

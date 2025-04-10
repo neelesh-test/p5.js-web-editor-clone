@@ -10,6 +10,7 @@ import {
 import mongoose from 'mongoose';
 import { getProjectsForUserId } from './project.controller';
 import User from '../models/user';
+console.log('test');
 
 const { ObjectId } = mongoose.Types;
 

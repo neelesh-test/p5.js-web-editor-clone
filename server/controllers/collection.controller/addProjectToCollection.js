@@ -14,6 +14,7 @@ export default function addProjectToCollection(req, res) {
   function sendFailure(code, message) {
     res.status(code).json({ success: false, message });
   }
+  console.log('test');
 
   function sendSuccess(collection) {
     res.status(200).json(collection);

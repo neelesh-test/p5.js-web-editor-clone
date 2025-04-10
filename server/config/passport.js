@@ -12,6 +12,7 @@ import User from '../models/user';
 
 const accountSuspensionMessage =
   'Account has been suspended. Please contact privacy@p5js.org if you believe this is an error.';
+  console.log('test');
 
 function generateUniqueUsername(username) {
   const adj =

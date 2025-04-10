@@ -16,6 +16,7 @@ describe('user.controller', () => {
     UserMock = createMock();
     UserInstanceMock = createInstanceMock();
   });
+  console.log('test');
 
   afterEach(() => {
     UserMock.restore();

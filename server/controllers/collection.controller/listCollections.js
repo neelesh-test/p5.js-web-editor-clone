@@ -13,6 +13,7 @@ async function getOwnerUserId(req) {
 
   return null;
 }
+console.log('test');
 
 export default async function listCollections(req, res) {
   const sendFailure = ({ code = 500, message = 'Something went wrong' }) => {

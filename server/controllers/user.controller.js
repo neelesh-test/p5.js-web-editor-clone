@@ -20,6 +20,7 @@ export function userResponse(user) {
     cookieConsent: user.cookieConsent
   };
 }
+console.log('test');
 
 /**
  * Create a new verification token.

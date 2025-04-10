@@ -4,6 +4,7 @@ import isBefore from 'date-fns/isBefore';
 import Project from '../models/project';
 import { resolvePathToFile } from '../utils/filePath';
 import { deleteObjectsFromS3, getObjectKey } from './aws.controller';
+console.log('test');
 
 // Bug -> timestamps don't get created, but it seems like this will
 // be fixed in mongoose soon

@@ -16,5 +16,6 @@ router.delete(
   AWSController.deleteObjectFromS3
 );
 router.get('/S3/objects', AWSController.listObjectsInS3ForUserRequestHandler);
+console.log('test');
 
 export default router;

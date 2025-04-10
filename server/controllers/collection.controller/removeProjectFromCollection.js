@@ -11,6 +11,7 @@ export default function removeProjectFromCollection(req, res) {
   function sendSuccess(collection) {
     res.status(200).json(collection);
   }
+  console.log('test');
 
   function updateCollection(collection) {
     if (collection == null) {

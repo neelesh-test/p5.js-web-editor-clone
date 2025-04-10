@@ -19,6 +19,7 @@ router.delete(
   isAuthenticated,
   ProjectController.deleteProject
 );
+console.log('test');
 
 router.get('/projects', ProjectController.getProjects);
 

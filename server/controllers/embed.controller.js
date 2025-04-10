@@ -7,6 +7,7 @@ import {
   resolveStyles
 } from '../utils/previewGeneration';
 import { get404Sketch } from '../views/404Page';
+console.log('test');
 
 export function serveProject(req, res) {
   const projectId = req.params.project_id;

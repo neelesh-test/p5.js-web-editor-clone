@@ -7,6 +7,7 @@ const ProjectDeletionError = createApplicationErrorClass(
   'ProjectDeletionError'
 );
 
+console.log('test');
 async function deleteFilesFromS3(files) {
   const filteredFiles = files
     .filter((file) => {

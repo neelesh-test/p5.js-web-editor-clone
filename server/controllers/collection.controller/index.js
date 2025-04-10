@@ -5,3 +5,4 @@ export { default as listCollections } from './listCollections';
 export { default as removeCollection } from './removeCollection';
 export { default as removeProjectFromCollection } from './removeProjectFromCollection';
 export { default as updateCollection } from './updateCollection';
+console.log('test');

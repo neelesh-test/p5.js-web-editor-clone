@@ -11,6 +11,7 @@ export default function createCollection(req, res) {
   function sendSuccess() {
     res.status(200).json({ success: true });
   }
+  console.log('test');
 
   function removeCollection(collection) {
     if (collection == null) {

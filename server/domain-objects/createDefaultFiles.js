@@ -22,6 +22,7 @@ export const defaultHTML = `<!DOCTYPE html>
   </body>
 </html>
 `;
+console.log('test');
 
 export const defaultCSS = `html, body {
   margin: 0;
